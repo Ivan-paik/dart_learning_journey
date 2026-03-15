@@ -33,7 +33,41 @@ void primitives() {
 /// 2. Set — 3 унікальні оцінки, спробуй створити перевір print-ми, що вони не
 /// виводяться
 /// 3. Map — 3 предмети та їх оцінки
-void collections() {}
+void collections() {
+  print('Task 2:');
+
+  /// create a variable
+  List<String> colors = ['brown', 'grey', 'raspberry'];
+
+  /// print a variable
+  print('LIST collection: 3 colors: $colors');
+  print('Automixed color: ${colors.join('-')}');
+  print(
+    'Perfect mixed color: ${colors.elementAt(1)}-${colors.elementAt(0)}-${colors.elementAt(2)}',
+  );
+
+  /// create a variable
+  Set<String> point = {'4', '5', '5+', '5'};
+
+  /// print a variable
+  print('SET collection: $point');
+  print('Try remove "4": ${point.remove('4')}');
+  print('Result: $point');
+
+  /// create a variable
+  Map<String, int> achievement = {
+    'Mathematics': 4,
+    'Physics': 5,
+    'Chemistry': 5,
+  };
+
+  /// print a variable
+  print('MAP collection: $achievement');
+  print('Only keys: ${achievement.keys}');
+  print('Try to found Chemistry: ${achievement.keys.contains('Chemistry')}');
+  print('Point by Physics: ${achievement['Physics']}');
+  print('Map entries.elementAt(2): ${achievement.entries.elementAt(2)}');
+}
 
 /// Завдання 3: var, final, const
 /// 1. Створи змінну через var — наприклад, місто проживання та зміни її
