@@ -89,13 +89,23 @@ void varFinalConst() {
  
   const weekDays = 7;
   print('days in week: $weekDays');
-  const taskNumber4 = '4';
+//  const taskNumber4 = '4';
 }
-
+const taskNumber4 = '4';
 /// Завдання 4: Record
 /// Створи іменований та не іменований (позиційний) record з твоїм ім'ям та
 /// віком і виведи обидва поля.
-void record() {}
+void record() {
+  print('Task $taskNumber4:');
+
+  ({String name, int age}) personDataNm = (name: 'Ivan', age: 48);
+  print('Record (named): $personDataNm');
+  print('Record (named): ${personDataNm.name}, ${personDataNm.age}');
+
+  (String, int) personDataUnm = ('Ivan', 48);
+  print('Record (unnamed): ${personDataUnm.$2}, ${personDataUnm.$1}');
+  print('Record (unnamed), name only 1-st letter: ${personDataUnm.$2}, ${personDataUnm.$1.substring(0,1)}');
+}
 
 /// Завдання 5: Nullable (опціонально)
 /// Створи змінну String? nickname — може бути null або ім'я.
