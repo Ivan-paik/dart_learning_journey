@@ -76,7 +76,7 @@ void collections() {
 /// 3. Створи змінну через const — наприклад, кількість днів у тижні
 void varFinalConst() {
   print('Task 3:');
- 
+
   var city = 'Uzhgorod';
   print('type "var", name "city" at start: $city');
   city = city.toUpperCase();
@@ -86,12 +86,14 @@ void varFinalConst() {
 
   final country = 'Ukraine';
   print('type "final", name "country": $country');
- 
+
   const weekDays = 7;
   print('days in week: $weekDays');
-//  const taskNumber4 = '4';
+  //  const taskNumber4 = '4';
 }
+
 const taskNumber4 = '4';
+
 /// Завдання 4: Record
 /// Створи іменований та не іменований (позиційний) record з твоїм ім'ям та
 /// віком і виведи обидва поля.
@@ -104,10 +106,25 @@ void record() {
 
   (String, int) personDataUnm = ('Ivan', 48);
   print('Record (unnamed): ${personDataUnm.$2}, ${personDataUnm.$1}');
-  print('Record (unnamed), name only 1-st letter: ${personDataUnm.$2}, ${personDataUnm.$1.substring(0,1)}');
+  print(
+    'Record (unnamed), name only 1-st letter: ${personDataUnm.$2}, ${personDataUnm.$1.substring(0, 1)}',
+  );
 }
 
 /// Завдання 5: Nullable (опціонально)
 /// Створи змінну String? nickname — може бути null або ім'я.
 /// Виведи її через ??: якщо null — виведи "Немає", інакше — значення.
-void nullable() {}
+void nullable() {
+  print('Task 5:');
+  String? nickname;
+  print('nickname: $nickname');
+
+  String displayName = nickname ?? 'Немає';
+  print('displayName: $displayName');
+  //print('nickname: ${nickname.isNotEmpty}'); //make compilation error
+  //joke, developer harassment:
+  nickname = 'null'; 
+  print('nickname: $nickname');
+  print('displayName: $nickname');
+  print('nickname isNotEmpty: ${nickname.isNotEmpty}');
+}
