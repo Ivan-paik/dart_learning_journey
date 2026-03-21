@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main() {
   task1();
   task2();
@@ -25,7 +27,7 @@ void task1() {
   final perimeter = (lengh + width) * 2;
   final frames1x1 = perimeter ~/ 1;
 
-  print('-------------');
+  print('--- Task 1 ----------');
   print('Area of a rectangle - $area');
   print('Perimeter of a rectangle - $perimeter');
   print('1x1 frames in a rectangle - $frames1x1');
@@ -40,7 +42,20 @@ void task1() {
 /// Чи менше число за 100.
 /// Чи ділиться число на 5 без залишку.
 /// Виведіть всі результати.
-void task2() {}
+void task2() {
+  var number = (Random().nextInt(200));
+  
+  final isGreater50 = number > 50;
+  final isLess100 = number < 100;
+  final isMultiple5 = number % 5 == 0;
+
+  print('--- Task 2 ----------');
+  print('Random number: $number');
+  print('is greater than 50 - $isGreater50');
+  print('is less than 100 - $isLess100');
+  print('is multiple 5 - $isMultiple5');
+  print('-------------');
+}
 
 /// Завдання 3: Логічні оператори
 /// Створіть змінні hasMoney і isStoreOpen (типу bool).
