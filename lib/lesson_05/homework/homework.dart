@@ -250,8 +250,8 @@ void task8() {
   var sumNum = 0;
   for (var i = 1; i <= 10; i++) {
     sumNum = sumNum + i;
-    }
-   print('Sum numbers form 1 to 10: $sumNum');
+  }
+  print('Sum numbers form 1 to 10: $sumNum');
 
   print('--------------------');
 }
@@ -263,7 +263,23 @@ void task8() {
 /// Якщо число парне — вивести “Парне число: …”,
 /// якщо непарне — “Непарне число: …”.
 
-void task9() {}
+void task9() {
+  var counter = 10;
+
+  print('--- Task 9 ---------');
+
+  print('Countdown from 10 to 1:');
+  while (counter > 0) {
+    if (counter.isEven) {
+      print('Парне число: $counter');
+    } else {
+      print('Непарне число: $counter');
+    }
+    counter--;
+  }
+
+  print('--------------------');
+}
 
 /// Завдання 10: Break і Continue
 /// Створіть цикл for від 1 до 20.
