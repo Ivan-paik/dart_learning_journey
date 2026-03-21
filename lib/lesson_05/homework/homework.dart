@@ -76,7 +76,9 @@ void task3() {
   print('is Store Open - $isStoreOpen');
   print('Result:');
   print('can buy - $canBuy');
-  print('need wait - ${(!hasMoney || !isStoreOpen)}'); //a more practical option: ${!canBuy}
+  print(
+    'need wait - ${(!hasMoney || !isStoreOpen)}',
+  ); //a more practical option: ${!canBuy}
   print('---------------------');
 }
 
@@ -89,7 +91,17 @@ void task3() {
 /// Потім створіть ще один тернарний оператор:
 /// Якщо менше 10 — вивести “Дуже холодно”.
 
-void task4() {}
+void task4() {
+  final temperature = (Random().nextInt(40));
+
+  print('--- Task 4 ----------');
+  print('Temperature value is $temperature');
+  print('One ternary operator:');
+  temperature > 25 ? print('Temperature is warm') : print('Temperature is cold');
+  print('Two ternary operators:');
+  temperature > 25 ? print('Temperature is warm') : temperature < 10 ? print('Temperature is very cold') : print('Temperature is cold');
+  print('---------------------');
+}
 
 /// Завдання 5: Оператори присвоєння
 /// Використовувати тільки оператори присвоєння (+=, -=, *=, /=)
