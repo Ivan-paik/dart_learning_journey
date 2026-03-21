@@ -97,9 +97,25 @@ void task4() {
   print('--- Task 4 ----------');
   print('Temperature value is $temperature');
   print('One ternary operator:');
-  temperature > 25 ? print('Temperature is warm') : print('Temperature is cold');
-  print('Two ternary operators:');
-  temperature > 25 ? print('Temperature is warm') : temperature < 10 ? print('Temperature is very cold') : print('Temperature is cold');
+  temperature > 25
+      ? print('Temperature is warm')
+      : print('Temperature is cold');
+
+  print('Two ternary operators (v1):');
+  temperature > 25
+      ? print('Temperature is warm')
+      : temperature < 10
+      ? print('Temperature is very cold')
+      : print('Temperature is cold');
+
+  print('Two ternary operators (v2):');
+  print(
+    'Temperature is ${temperature > 25
+        ? 'warm'
+        : temperature < 10
+        ? 'very cold'
+        : 'cold'}',
+  );
   print('---------------------');
 }
 
@@ -119,7 +135,27 @@ void task4() {
 /// Поділіть бали на кількість запитань.
 /// Виведіть остаточний результат.
 
-void task5() {}
+void task5() {
+  var score = 0;
+  final correctAnswers = 17;
+  final mistakes = 3;
+  final totalQuestions = 20;
+
+  print('--- Task 5 ----------');
+  print('Base score - $score');
+  
+  score += correctAnswers*10;
+  print('Score with correct ansvers - $score');
+
+  print('Score with mistakes - ${score -= mistakes*5}');
+  
+  score *= 2;
+  print('Score x2 - $score');
+
+  print('Average score - ${score ~/= totalQuestions}');
+
+  print('---------------------');
+}
 
 /// Завдання 6: Умовні конструкції if/else
 /// Створіть змінну examScore з значенням 56
