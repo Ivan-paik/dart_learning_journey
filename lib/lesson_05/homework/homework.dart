@@ -222,7 +222,6 @@ void task7() {
       print('Вихідний день 🎉');
     default:
       print('Невірний номер дня');
-      
   }
 
   print('---------------------');
@@ -233,7 +232,29 @@ void task7() {
 /// Виведіть тільки парні числа.
 /// Обчисліть суму чисел від 1 до 10.
 
-void task8() {}
+void task8() {
+  print('--- Task 8 ----------');
+
+  print('Numbers form 1 to 10:');
+  for (var i = 1; i <= 10; i++) {
+    print(i);
+  }
+
+  print('Even numbers form 1 to 10:');
+  for (var i = 1; i <= 10; i++) {
+    if (i.isEven) {
+      print(i);
+    }
+  }
+
+  var sumNum = 0;
+  for (var i = 1; i <= 10; i++) {
+    sumNum = sumNum + i;
+    }
+   print('Sum numbers form 1 to 10: $sumNum');
+
+  print('--------------------');
+}
 
 /// Завдання 9: Цикл while
 /// Почніть із числа 10.
