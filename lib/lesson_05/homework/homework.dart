@@ -31,7 +31,7 @@ void task1() {
   print('Area of a rectangle - $area');
   print('Perimeter of a rectangle - $perimeter');
   print('1x1 frames in a rectangle - $frames1x1');
-  print('-------------');
+  print('---------------------');
 }
 
 /// Завдання 2: Оператори порівняння
@@ -44,7 +44,7 @@ void task1() {
 /// Виведіть всі результати.
 void task2() {
   var number = (Random().nextInt(200));
-  
+
   final isGreater50 = number > 50;
   final isLess100 = number < 100;
   final isMultiple5 = number % 5 == 0;
@@ -54,7 +54,7 @@ void task2() {
   print('is greater than 50 - $isGreater50');
   print('is less than 100 - $isLess100');
   print('is multiple 5 - $isMultiple5');
-  print('-------------');
+  print('---------------------');
 }
 
 /// Завдання 3: Логічні оператори
@@ -64,7 +64,21 @@ void task2() {
 /// Чи можна зробити покупку (якщо є гроші і магазин відкритий).
 /// Чи потрібно почекати (якщо магазин закритий або немає грошей).
 /// Використайте оператори &&, ||, !.
-void task3() {}
+void task3() {
+  final hasMoney = (Random().nextBool());
+  final isStoreOpen = (Random().nextBool());
+
+  final canBuy = hasMoney && isStoreOpen;
+
+  print('--- Task 3 ----------');
+  print('Value:');
+  print('has Money - $hasMoney');
+  print('is Store Open - $isStoreOpen');
+  print('Result:');
+  print('can buy - $canBuy');
+  print('need wait - ${(!hasMoney || !isStoreOpen)}'); //a more practical option: ${!canBuy}
+  print('---------------------');
+}
 
 /// Завдання 4: Тернарний оператор
 /// Створіть змінну temperature.
