@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_parenthesis,  prefer_final_locals, lines_longer_than_80_chars
+
 import 'dart:math';
 
 void main() {

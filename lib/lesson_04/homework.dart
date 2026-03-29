@@ -1,3 +1,5 @@
+// ignore_for_file: equal_elements_in_set, omit_local_variable_types, prefer_final_locals, lines_longer_than_80_chars
+
 void main() {
   primitives();
   collections();
