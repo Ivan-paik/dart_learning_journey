@@ -13,51 +13,65 @@
 
 // Task 3: Послідовне виконання Future
 // Виконайте методи fetchName() та fetchAge() послідовно.
-// Виміряйте та виведіть час виконання обох методів. 
-// Порада. Можете використати для виконання другого пункту клас https://api.flutter.dev/flutter/dart-core/Stopwatch-class.html 
+// Виміряйте та виведіть час виконання обох методів.
+// Порада. Можете використати для виконання другого пункту клас https://api.flutter.dev/flutter/dart-core/Stopwatch-class.html
 import 'dart:async';
 
+// Task 4: Паралельне виконання Future (Future.wait)
+// Виконайте методи fetchName() та fetchAge() паралельно за допомогою Future.wait.
+// Виміряйте та виведіть час виконання.
 
 void main() async {
   print('----------------Початок програми----------------');
-  final stopwatch = Stopwatch();
+  //final stopwatch = Stopwatch();
   final stopwatchTogether = Stopwatch();
 
-  stopwatch.start();
+  //stopwatch.start();
   stopwatchTogether.start();
-  
-  final resultName = await fetchName();
-  
-  stopwatch.stop();
 
-  print('Мене звати $resultName');  
+  //final resultName = await fetchName();
 
-  print('Час виконання fetchName() ${stopwatch.elapsedMilliseconds} мс');
+  final resultNameAge = await Future.wait([fetchName(), fetchAge()]);
 
-  stopwatch.reset();
+  print('Мене звати ${resultNameAge[0]}');
 
-  stopwatch.start();
+  //stopwatch.stop();
 
-  final resultAge = await fetchAge();
+  //print('Мене звати $resultName');
 
-  stopwatch.stop();
-  
+  //print('Час виконання fetchName() ${stopwatch.elapsedMilliseconds} мс');
+
+  //stopwatch.reset();
+
+  //stopwatch.start();
+
+  //final resultAge = await fetchAge();
+
+  final resultAge = resultNameAge[1];
+
+  //stopwatch.stop();
+
   stopwatchTogether.stop();
 
   if (resultAge.endsWith('1') && resultAge != '11') {
     print('Мені $resultAge рік');
-  } else if (resultAge.endsWith('2') && resultAge != '12'|| resultAge.endsWith('3') && resultAge != '13' || resultAge.endsWith('4') && resultAge != '14') {
+  } else if (resultAge.endsWith('2') && resultAge != '12' ||
+      resultAge.endsWith('3') && resultAge != '13' ||
+      resultAge.endsWith('4') && resultAge != '14') {
     print('Мені $resultAge роки');
   } else {
     print('Мені $resultAge років');
   }
 
-  print('Час виконання fetchAge() ${stopwatch.elapsedMilliseconds} мс');
+  //print('Час виконання fetchAge() ${stopwatch.elapsedMilliseconds} мс');
 
-  print('Сумарний час виконання fetchName() + fetchAge() ${stopwatchTogether.elapsedMilliseconds} мс');
+  //print('Сумарний час виконання fetchName() + fetchAge() ${stopwatchTogether.elapsedMilliseconds} мс');
   
-  print('----------------Кінець програми----------------');
+  print(
+    'Час паралельного виконання fetchName() + fetchAge() ${stopwatchTogether.elapsedMilliseconds} мс',
+  );
 
+  print('----------------Кінець програми----------------');
 }
 
 Future<String> fetchName() async {
