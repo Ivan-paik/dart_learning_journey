@@ -21,8 +21,10 @@ import 'dart:async';
 void main() async {
   print('----------------Початок програми----------------');
   final stopwatch = Stopwatch();
-  
+  final stopwatchTogether = Stopwatch();
+
   stopwatch.start();
+  stopwatchTogether.start();
   
   final resultName = await fetchName();
   
@@ -39,6 +41,8 @@ void main() async {
   final resultAge = await fetchAge();
 
   stopwatch.stop();
+  
+  stopwatchTogether.stop();
 
   if (resultAge.endsWith('1') && resultAge != '11') {
     print('Мені $resultAge рік');
@@ -50,6 +54,8 @@ void main() async {
 
   print('Час виконання fetchAge() ${stopwatch.elapsedMilliseconds} мс');
 
+  print('Сумарний час виконання fetchName() + fetchAge() ${stopwatchTogether.elapsedMilliseconds} мс');
+  
   print('----------------Кінець програми----------------');
 
 }
