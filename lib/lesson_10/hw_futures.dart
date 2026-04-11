@@ -11,15 +11,34 @@
 // Виведіть результат у консоль у форматі: "Мені [ваш вік] років".
 // Реалізуйте логіку, щоб слово "рік" змінювалося відповідно до значення віку (наприклад: 21 рік, 22 роки, 25 років).
 
+// Task 3: Послідовне виконання Future
+// Виконайте методи fetchName() та fetchAge() послідовно.
+// Виміряйте та виведіть час виконання обох методів. 
+// Порада. Можете використати для виконання другого пункту клас https://api.flutter.dev/flutter/dart-core/Stopwatch-class.html 
+import 'dart:async';
+
 
 void main() async {
   print('----------------Початок програми----------------');
-
-  //final resultName = await fetchName();
+  final stopwatch = Stopwatch();
   
-  //print('Мене звати $resultName');  
+  stopwatch.start();
+  
+  final resultName = await fetchName();
+  
+  stopwatch.stop();
+
+  print('Мене звати $resultName');  
+
+  print('Час виконання fetchName() ${stopwatch.elapsedMilliseconds} мс');
+
+  stopwatch.reset();
+
+  stopwatch.start();
 
   final resultAge = await fetchAge();
+
+  stopwatch.stop();
 
   if (resultAge.endsWith('1') && resultAge != '11') {
     print('Мені $resultAge рік');
@@ -29,14 +48,16 @@ void main() async {
     print('Мені $resultAge років');
   }
 
+  print('Час виконання fetchAge() ${stopwatch.elapsedMilliseconds} мс');
+
   print('----------------Кінець програми----------------');
 
 }
 
-// Future<String> fetchName() async {
-//   await Future<void>.delayed(const Duration(seconds: 2));
-//   return 'Іван';
-// }
+Future<String> fetchName() async {
+  await Future<void>.delayed(const Duration(seconds: 2));
+  return 'Іван';
+}
 
 Future<String> fetchAge() async {
   await Future<void>.delayed(const Duration(milliseconds: 1500));
