@@ -13,16 +13,21 @@ void main() async {
 
   final controller = StreamController<String>();
 
-  controller.add('Hello');
-  controller.add('World');
-  controller.add('Dart');
+  // controller.add('Hello');
+  // controller.add('World');
+  // controller.add('Dart');
+
+  controller
+    ..add('Hello')
+    ..add('World')
+    ..add('Dart');
 
   controller.close();
 
   controller.stream.listen(
-    print, //vs code подобається лише цей варіант
+    //print, //vs code подобається лише цей варіант
     
-    //(event) => print(event), 
+    (event) => print('$event '), //по суті, так би треба
     
     // (String event) { 
     //   print(event);
